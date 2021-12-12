@@ -1,6 +1,10 @@
 # UML-tips
 UMLについて
 
+plantumlという、テキストから図を起こすツールがあり、そこにUMLについての説明もある。
+
+https://plantuml.com/ja/
+
 ## 分析
 * ユースケース図
 
