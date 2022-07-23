@@ -3,7 +3,41 @@ UMLについて
 
 plantumlという、テキストから図を起こすツールがあり、そこにUMLについての説明もある。
 
-https://plantuml.com/ja/
+* [plantuml](https://plantuml.com/ja/)
+
+mermaidはGithubでそのまま表示可能
+
+* [mermaid](https://mermaid-js.github.io)
+
+```mermaid
+  graph TD;
+      subgraph 追加構成
+      sim(Robot Simulator)
+      end
+      subgraph 既存構成
+      Human(人間)
+      rc(Robot Controller)
+      Robot
+      end
+      sim-->| 高さ指定 | rc
+      rc-->| ライブ画像 |sim;
+      rc-->|高さ指定|Robot;
+      Robot-->|ライブ画像|rc
+      Human-->|カメラ位置調整|Robot      
+```
+
+```mermaid
+sequenceDiagram
+    participant Human as 人間
+    participant Robot
+    participant rc as Robot Controller
+    participant sim as Robot Simulator
+    Human->>Robot: カメラの取り付け位置を微糖性
+    Robot->>rc:ライブ画像
+    rc->>sim:ライブ画像（UDP）
+    sim->>sim: Robot側のモニター画像更新
+```
+
 
 ## 分析
 * ユースケース図
